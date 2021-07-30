@@ -1,4 +1,4 @@
-import {Field} from "formik";
+import {Field, ErrorMessage} from "formik";
 import {object, string} from "yup";
 import {FormikStep, FormikStepper} from "@components/step";
 
@@ -24,12 +24,14 @@ const homePage = () => {
             >
                 <label htmlFor="email">Email</label>
                 <Field id="email" name="email" placeholder="email"/>
+                <ErrorMessage name="email"/>
             </FormikStep>
             <FormikStep
                 validationSchema={object({name: string().required()})}
             >  
                 <label htmlFor="name">Name</label>
                 <Field id="name" name="name" placeholder="name"/>
+                <ErrorMessage name="name"/>
             </FormikStep>
         </FormikStepper>
     </>
